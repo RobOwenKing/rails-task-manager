@@ -17,12 +17,14 @@
     </div>
   </div>
 
-  <div class = "field">
-    <div class="label checkbox">
-      <%= f.label :completed %>
+  <% if @task.persisted? %>
+    <div class = "field">
+      <div class="label checkbox">
+        <%= f.label :completed %>
+      </div>
+      <%= f.check_box :completed %>
     </div>
-    <%= f.check_box :completed %>
-  </div>
+  <% end %>
 
   <%= f.submit "Send", class: "submit" %>
 <% end %>
